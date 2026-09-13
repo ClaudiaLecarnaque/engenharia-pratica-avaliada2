@@ -28,6 +28,9 @@ A regra de multa está *hardcoded* dentro de `calcular_multa` (`multa = dias_atr
 
 Isso torna a classe impossível de testar de forma isolada (não há como substituir o banco ou o serviço de email por um dublê/mock em teste unitário) e impossível de reconfigurar sem editar o código-fonte.
 
+### LSP e ISP
+O código original não usa herança nem interfaces.
+
 ## 2. Problemas de coesão e acoplamento
 
 **Coesão baixa:** os métodos da classe não giram em torno de um único propósito. `realizar_emprestimo` sozinho faz busca em três tabelas, grava em duas, envia email e gera PDF — são pelo menos quatro sub-responsabilidades dentro de um único método.
