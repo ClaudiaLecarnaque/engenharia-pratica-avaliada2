@@ -29,7 +29,7 @@ A regra de multa está *hardcoded* dentro de `calcular_multa` (`multa = dias_atr
 Isso torna a classe impossível de testar de forma isolada (não há como substituir o banco ou o serviço de email por um dublê/mock em teste unitário) e impossível de reconfigurar sem editar o código-fonte.
 
 ### LSP e ISP
-O código original não usa herança nem interfaces— não há subclasses substituindo uma classe base, nem uma interface "gorda" forçando implementações desnecessárias. Por isso, **LSP (Liskov Substitution)** e **ISP (Interface Segregation)** não se aplicam a esta versão do código; a refatoração, ao introduzir `IRepositorio` e `INotificador`, é o momento em que esses princípios passam a valer — e ambos são respeitados: cada implementação concreta pode substituir sua abstração sem quebrar o comportamento esperado (LSP), e as interfaces são pequenas e focadas em uma única operação (ISP).
+O código original não usa herança nem interfaces — não há subclasses substituindo uma classe base, nem uma interface "gorda" forçando implementações desnecessárias. Por isso, **LSP (Liskov Substitution)** e **ISP (Interface Segregation)** não se aplicam a esta versão do código; a refatoração, ao introduzir `IRepositorio` e `INotificador`, é o momento em que esses princípios passam a valer — e ambos são respeitados: cada implementação concreta pode substituir sua abstração sem quebrar o comportamento esperado (LSP), e as interfaces são pequenas e focadas em uma única operação (ISP).
 
 ## 2. Problemas de coesão e acoplamento
 
